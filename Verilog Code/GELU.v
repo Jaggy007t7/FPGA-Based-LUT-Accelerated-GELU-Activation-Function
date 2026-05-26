@@ -5,12 +5,12 @@ module Gelu #(parameter in_width=10,dataWidth=32)(
 );
 
 // Memory Block;
-reg [dataWidth-1:0]mem[2**in_width-1:0];
+reg [dataWidth-1:0]mem[0:2**in_width-1];
 reg [in_width-1 : 0 ]y;
 
 // initializing the .mif file;
 initial begin 
-    $readmemb("GELU_content.mif",mem,0,2**in_width-1);
+    $readmemb("float32_output.csv",mem);
 end 
 
 always @(posedge clk)

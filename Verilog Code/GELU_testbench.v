@@ -1,5 +1,5 @@
 // Testbench for GELU module
-`timescale 1ns/1ns
+`timescale 1ps/1ps
 module tb_gelu;
 
     // Parameters
@@ -29,7 +29,7 @@ module tb_gelu;
 
     // Load the MIF file into reference memory
     initial begin
-        $readmemb("GELU_content.mif", ref_mem);
+        $readmemb("float32_output.csv", ref_mem);
     end
 
     // Main test procedure
