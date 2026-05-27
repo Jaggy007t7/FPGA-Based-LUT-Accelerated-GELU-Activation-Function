@@ -25,7 +25,7 @@ async def GELU(dut):
 
         # Ports:-
         dut.clk.value = clk
-        dut.num.value = num
+        dut.In.value = num
 
         await Timer(5,unit='ps')
 

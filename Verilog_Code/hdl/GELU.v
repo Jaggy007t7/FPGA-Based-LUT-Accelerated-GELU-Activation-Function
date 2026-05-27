@@ -1,5 +1,5 @@
 module Gelu #(parameter in_width=10,dataWidth=32)(
-    input [in_width-1:0]in,
+    input [in_width-1:0]In,
     input clk,
     output [dataWidth-1:0]out
 );
@@ -15,10 +15,10 @@ end
 
 always @(posedge clk)
     begin
-        if($signed(in) >= 0)// if input x is positive no.
-            y <= in+(2**(in_width-1));
+        if($signed(In) >= 0)// if input x is positive no.
+            y <= In+(2**(in_width-1));
         else 
-            y <= in-(2**(in_width-1));   // if input x is negative.  
+            y <= In-(2**(in_width-1));   // if input x is negative.  
     end
 
 assign out = mem[y];
